@@ -102,9 +102,14 @@ export default function AdvisorsPage() {
             {activeFilters.length > 0 && (
               <div className="flex flex-wrap gap-2 mb-4">
                 {activeFilters.map(([key, val]) => (
-                  <Badge key={key} variant="brand" className="gap-1.5 cursor-pointer" onClick={() => clearFilter(key as keyof AdvisorFilters)}>
-                    {String(val)} <X className="h-3 w-3" />
-                  </Badge>
+                <button
+  key={key}
+  onClick={() => clearFilter(key as keyof AdvisorFilters)}
+>
+  <Badge variant="brand" className="gap-1.5 cursor-pointer">
+    {String(val)} <X className="h-3 w-3" />
+  </Badge>
+</button>
                 ))}
               </div>
             )}
