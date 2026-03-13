@@ -22,13 +22,12 @@ export default function DashboardPage() {
         <p className="text-slate-500 text-sm mt-1">Here's an overview of your financial advisory activity</p>
       </div>
 
-      <div className="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-4 gap-4 stagger">
-        <StatCard label="Saved Advisors" value={savedIds.length} icon={Heart} color="brand" className="animate-in" />
-        <StatCard label="Consultations" value={consultations.length} icon={CalendarClock} change="1 new" positive color="emerald" className="animate-in" />
-        <StatCard label="Pending Reviews" value={1} icon={Star} color="amber" className="animate-in" />
-        <StatCard label="Total Spent" value={formatCurrency(6500)} icon={TrendingUp} color="purple" className="animate-in" />
-      </div>
-
+     <div className="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-4 gap-4 stagger">
+  <StatCard label="Saved Advisors" value={savedIds.length} icon={Heart} color="brand" />
+  <StatCard label="Consultations" value={consultations.length} icon={CalendarClock} change="1 new" positive color="emerald" />
+  <StatCard label="Pending Reviews" value={1} icon={Star} color="amber" />
+  <StatCard label="Total Spent" value={formatCurrency(6500)} icon={TrendingUp} color="purple" />
+</div>
       {/* Upcoming consultations */}
       <div className="bg-white rounded-xl border border-slate-200 shadow-sm">
         <div className="px-6 py-4 border-b border-slate-100 flex items-center justify-between">
