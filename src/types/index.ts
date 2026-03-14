@@ -128,3 +128,50 @@ export interface AdvisorFilters {
   page?: number;
   limit?: number;
 }
+
+// ─── Auth ─────────────────────────────────────────────
+
+export interface AuthResponse {
+  user: User;
+  tokens: AuthTokens;
+}
+
+// ─── Lead Creation ────────────────────────────────────
+
+export interface CreateLeadRequest {
+  advisorId: string;
+  investorName: string;
+  investorEmail: string;
+  investorPhone: string;
+  message: string;
+  investmentGoal: string;
+  investmentAmount: string;
+}
+
+// ─── Review Creation ──────────────────────────────────
+
+export interface CreateReviewRequest {
+  advisorId: string;
+  rating: number;
+  comment: string;
+}
+
+// ─── Saved Advisors ───────────────────────────────────
+
+export interface SavedAdvisor {
+  id: string;
+  advisorId: string;
+  advisor: Advisor;
+  savedAt: string;
+}
+
+// ─── Advisor Analytics ─────────────────────────────────
+
+export interface AdvisorAnalytics {
+  totalLeads: number;
+  totalConsultations: number;
+  totalClients: number;
+  conversionRate: number;
+  monthlyLeads: number;
+  monthlyConsultations: number;
+}
